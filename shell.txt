@@ -1,0 +1,12 @@
+#### Consensu Algo
+* Interfaces:
+  * `GossipMessageReceived` - triggered by the gossip service upon message received with Conensus topic.
+  * `RequestNewBlock() : block` - called by the One height PBFT, returns a block proposal.
+  * `ValidateBlock(block) : valid` - called by the One height PBFT, validates a block proposal.
+  * `CalcBlockHash (block) : block_hash` - called by the One height PBFT, calculates the hash on a block based on the hashing scheme.
+  * `CommitBlock(block, pbft_proof, random_seed_database)` - called by the One height PBFT, generates a block proof and commits the block
+  * `ValidateRandomSeedData(random_seed_data, sender)`
+  * `AcknowledgeTransactionsBlockConsensus (block headers + proof)` - called by the Block storage s part of block sync.
+  * `AcknowledgeResultsBlockConsensus ((block headers + proof)` - called by the Block storage s part of block sync.
+  * `BroadcastMessage`
+  * `UnicastMessage`
